@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="css/theme/default.css">
     <!-- link rel="stylesheet" href="css/highlight/default.css" -->
     <link rel="stylesheet" href="css/highlight/dark.css">
+    <style type="text/css">
+      p { text-align: left; }
+    </style>
   </head>
   <body>
     <div class="reveal">
@@ -71,6 +74,14 @@ class SampleTestSuite extends FunSuite {
         </section>
 
         <section>
+          <p>This discussion is attempts to do the following:</p>
+          <ul>
+            <li>assert the need for the Next Big Language</li>
+            <li>determine the suitability of Scala as the Next Big Language</li>
+          </ul>
+        </section>
+
+        <section>
           <p>Principle: Testing is NOT enough.</p>
           <p>"Testing can show the presence of errors but not their absence" - Edsger W. Dijkstra</p>
         </section>
@@ -110,6 +121,55 @@ class SampleTestSuite extends FunSuite {
         </section>
 
         <section>
+          <p>In order to eliminate side-effects, we should make our variables immutable</p>
+          <pre>
+            <code>
+val n = scala.math.abs(start)
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <p>As mentioned earlier, Scala will allow us to create mutable variables, but we should create mutable
+             variables only when it is absolutely necessary (and even then, we should not do it).</p>
+          <pre>
+            <code>
+var n = scala.math.abs(start)
+            </code>
+          </pre>
+          <p>Plugins for various IDEs generally highlight the var keyword in order to enforce the stigma surrounding its
+             use.</p>
+        </section>
+
+        <section>
+          <p>Like Java and Go, Scala classes and objects are organized by packages.</p>
+          <pre>
+            <code>
+package org.indigententerprises.exercises.ninetynine.lists
+
+class L2 {
+...
+}
+            </code>
+          </pre>
+          <p>Packages provide logical organization. This allows me to do two things.</p>
+          <p>First, packages allow me to place like things together and this calms my disdain for chaos.</p>
+          <p>Second, packages allow me to navigate more easily through new codebases.</p>
+        </section>
+
+        <section>
+          <p>A note on Scala packaging</p>
+          <p>The ease of browsing a new codebase depends upon the agreement between packages and directory hierarchies.
+             This property does not always hold. Unfortunately, this agreement does not hold for Scala. Therefore,
+             developers must make an effort to enforce this alignment.</p>
+        </section>
+
+        <section>
+          <p>Scala is organized by inheritance as follows:</p>
+          <img src="images/Scala-Type-Hierarchy.png"/>
+        </section>
+
+        <section>
           <p>Question: Why Scala?</p>
           <p>Answer: Scala combines the paradigms of Object-Orientation and Functional programming. While Scala does not
              prevent one from using mutable variables and, therefore, introducing side-effects, it does encourage one to
@@ -118,17 +178,43 @@ class SampleTestSuite extends FunSuite {
         </section>
 
         <section>
+          <p>Advantages of Scala</p>
+          <p>"It Keeps Idiots Out. The biggest advantage of Scala, at least so far, is that it keeps a certain type of
+              coder out of the codebase."</p>
+          <a href="http://www.nomachetejuggling.com/2011/12/15/scala-first-impressions/">
+            http://www.nomachetejuggling.com/2011/12/15/scala-first-impressions/
+          </a>
+        </section>
+
+        <section>
+          <p>Disadvantages of Scala</p>
+          <p>It Keeps Idiots Out</p>
+          <p>The Next Big Language must be inclusive.</p>
+          <p>I speculate that the Next Big Language must allow junior developers to participate without allowing them to
+             damage the codebase. Code damage is a serious problem.</p>
+          <img src="images/codedamage.png"/>
+          <p>Question: Is it possible for a language to be both restrictive and fun?</p>
+        </section>
+
+        <section>
           <p>At this point, several concessions must be made.</p>
           <p>First, Functional programming is not necessarily the next big thing.</p>
           <p>Second, even if Functional programming emerges as the next big thing, we cannot be sure that Scala will be
              the vehicle of choice for Functional development.</p>
-          <p>On the other hand, we need some vehicle to explore the Functional terrain now and I believe that Scala is
-             a fantastic candidate for this.</p>
+          <p>On the other hand, Functional programming merits serious consideration. Should we choose to explore
+             Functional programming, we will need some vehicle to explore its terrain. I believe that Scala is a
+             fantastic candidate for this exploration.</p>
         </section>
 
         <section>
-          <p>Scala is organized by inheritance as follows:</p>
-          <img src="images/Scala-Type-Hierarchy.png"/>
+          <p>Looking forward by looking back</p>
+          <p>Question: What were the last few NBLs?</p>
+        </section>
+
+        <section>
+          <p>Reflection</p>
+          <p>Question: Is it possible for a language to be both restrictive and fun?</p>
+          <p>Question: Is it even necessary for the NBL to be restrictive?</p>
         </section>
       </div>
     </div>
