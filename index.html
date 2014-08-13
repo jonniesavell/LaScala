@@ -143,7 +143,7 @@ var n = scala.math.abs(start)
           <p>Like Java and Go, Scala classes and objects are organized by packages.</p>
           <pre>
             <code>
-package org.indigententerprises.exercises.ninetynine.lists
+package com.scala.presentation
 
 class L2 {
 ...
@@ -156,10 +156,68 @@ class L2 {
         </section>
 
         <section>
-          <p>A note on Scala packaging</p>
+          <p>A note on packages in Scala</p>
           <p>The ease of browsing a new codebase depends upon the agreement between packages and directory structure.
              This property does not always hold. Unfortunately, this agreement does not hold for Scala. Therefore,
              developers must make an effort to enforce this alignment.</p>
+        </section>
+
+        <section>
+          <p>Static members have been removed in Scala</p>
+          <p>No static data members</p>
+          <p>No static methods</p>
+          <p>In place of static data members and static methods, Scala offers the object, an instance of which only one
+             exists per program.</p>
+          <pre>
+            <code>
+package com.scala.presentation
+
+object Application {
+  def main(arguments: Array[String]) {
+    for (argument <- arguments)
+      println("argument: " + argument)
+    }
+}
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <p>Question: Did everyone notice that for loop?</p>
+          <pre>
+            <code>
+val clothing = List("socks", "pants", "shoes")
+
+for (element in clothing) {
+...
+}
+            </code>
+          </pre>
+          <p>This pattern of iteration had already appeared widely in both Java and C#.</p>
+        </section>
+
+        <section>
+          <p>Recursion is not always bad. In the event that one can arrange the function properly, one will receive all
+             of the efficiency of iteration with the elegance of recursion. This technique is called tail recursion.</p>
+          <pre>
+            <code>
+package com.scala.presentation
+
+object Reverse {
+
+  def reverse[T](list: List[T]): List[T] = {
+    def reverseAssistant(list: List[T], accumulator: List[T]): List[T] =
+      list match {
+        case Nil => accumulator
+        case x :: xs => reverseAssistant(xs, x :: accumulator)
+      }
+
+      reverseAssistant(list, Nil)
+  }
+}
+            </code>
+          </pre>
+          <p>TODO</p>
         </section>
 
         <section>
