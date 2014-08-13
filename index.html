@@ -74,7 +74,7 @@ class SampleTestSuite extends FunSuite {
         </section>
 
         <section>
-          <p>This discussion is attempts to do the following:</p>
+          <p>This discussion attempts to do the following:</p>
           <ul>
             <li>assert the need for the Next Big Language</li>
             <li>determine the suitability of Scala as the Next Big Language</li>
@@ -82,20 +82,18 @@ class SampleTestSuite extends FunSuite {
         </section>
 
         <section>
-          <p>Principle: Testing is NOT enough.</p>
+          <p>Principle: Testing is NOT enough to demonstrate correctness.</p>
           <p>"Testing can show the presence of errors but not their absence" - Edsger W. Dijkstra</p>
-        </section>
-
-        <section>
+          <br/>
           <p>Principle: Concurrency is difficult to implement and its correctness is very difficult to demonstrate.</p>
         </section>
 
-        <section>
+        <!-- section>
           <p>Some believe that we need to build better languages and tools in order to build defect free software of
              great complexity.</p>
           <p>Others believe that we need to build better languages and tools in order to easily increase concurrency
              within software of great complexity.</p>
-        </section>
+        </section -->
 
         <section>
           <p>"The special characteristics and advantages of functional programming are often summed up more or less as
@@ -121,7 +119,8 @@ class SampleTestSuite extends FunSuite {
         </section>
 
         <section>
-          <p>In order to eliminate side-effects, we should make our variables immutable</p>
+          <p>In order to control side-effects, we should make our variables immutable. Any attempt to modify a variable
+             marked as a val will result in a compilation error.</p>
           <pre>
             <code>
 val n = scala.math.abs(start)
@@ -130,8 +129,9 @@ val n = scala.math.abs(start)
         </section>
 
         <section>
-          <p>As mentioned earlier, Scala will allow us to create mutable variables, but we should create mutable
-             variables only when it is absolutely necessary (and even then, we should not do it).</p>
+          <p>As mentioned earlier, Scala allows us to create mutable variables, but we should create mutable variables
+             only when it is absolutely necessary (and even then, we should not do it). We create mutable variables
+             by marking them with the var keyword.</p>
           <pre>
             <code>
 var n = scala.math.abs(start)
@@ -166,8 +166,9 @@ class L2 {
           <p>Static members have been removed in Scala</p>
           <p>No static data members</p>
           <p>No static methods</p>
-          <p>In place of static data members and static methods, Scala offers the object, an instance of which only one
-             exists per program.</p>
+          <p>In place of static data members and static methods, Scala offers the object. Each object is a singleton
+             and, therefore, only one instance of it exists at runtime. No special ceremony is required to create an
+             object other than to replace the keyword class with the keyword object.</p>
           <pre>
             <code>
 package com.scala.presentation
@@ -183,7 +184,7 @@ object Application {
         </section>
 
         <section>
-          <p>Question: Did everyone notice that for loop?</p>
+          <p>Question: Did everyone notice the for loop?</p>
           <pre>
             <code>
 val clothing = List("socks", "pants", "shoes")
