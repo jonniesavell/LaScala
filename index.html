@@ -215,8 +215,30 @@ object P01 {
         </section>
 
         <section>
-          <p>Recursion is not always bad. In the event that one can arrange the function properly, one will receive all
-             of the efficiency of iteration with the elegance of recursion. This technique is called tail recursion.</p>
+          <p>Additionally, Scala allows us to define functions within functions.</p>
+          <code>
+            <pre>
+package com.scala.presentation
+
+object P04 {
+  def length[T](list: List[T]): Int = {
+    def lengthAssistant(list: List[T], accumulator: Int): Int =
+      list match {
+        case Nil => accumulator
+        case x :: xs => lengthAssistant(xs, (accumulator + 1))
+      }
+
+    lengthAssistant(list, 0)
+  }
+}
+            </pre>
+          </code>
+        </section>
+
+        <section>
+          <p>Question: What is all this accumulator business we've seen in the last few slides?</p>
+          <p>Answer: The use of accumulators allows the developer to receive all of the efficiency of iteration with the
+             elegance of recursion. This technique is called tail recursion.</p>
           <pre>
             <code>
 package com.scala.presentation
@@ -235,7 +257,6 @@ object Reverse {
 }
             </code>
           </pre>
-          <p>TODO</p>
         </section>
 
         <section>
