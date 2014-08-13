@@ -204,7 +204,7 @@ package com.scala.presentation
 
 object Max {
   def max(x: Int, y: Int): Int =
-    if (x <= y)
+    if (x >= y)
       x
     else
       y
@@ -233,8 +233,8 @@ object P01 {
 
         <section>
           <p>Additionally, Scala allows us to define functions within functions.</p>
-          <code>
-            <pre>
+          <pre>
+            <code>
 package com.scala.presentation
 
 object P04 {
@@ -248,8 +248,8 @@ object P04 {
     lengthAssistant(list, 0)
   }
 }
-            </pre>
-          </code>
+            </code>
+          </pre>
         </section>
 
         <section>
