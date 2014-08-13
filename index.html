@@ -197,6 +197,24 @@ for (element <- clothing) {
         <section>
           <p>Because Scala is functional, it provides the function construct. Although Scala does not enforce this,
              the Scala community encourages the development of functions which are free of side-effects.</p>
+          <p>This is an example of a function.</p>
+          <pre>
+            <code>
+package com.scala.presentation
+
+object Max {
+  def max(x: Int, y: Int): Int =
+    if (x <= y)
+      x
+    else
+      y
+}
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <p>This is an example of a more complicated function.</p>
           <pre>
             <code>
 package com.scala.presentation
@@ -208,7 +226,7 @@ object P01 {
       case x :: Nil => x
       case x :: xs => last(xs)
     }
-  }
+}
             </code>
           </pre>
         </section>
